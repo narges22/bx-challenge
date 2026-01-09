@@ -37,7 +37,10 @@ Build a small React application that displays a simple chart based on data retri
 ### Chart Requirements:
 
 The chart must be rendered using a **canvas**.
-The API will return an array of data points in the form `[x, y]` along with a color. At minimum, your chart should display a simple line graph connecting these points. Any enhancements beyond this (interactivity, styling, scaling, etc.) are optional but will be appreciated—even if not perfect.
+The API will return an array of lines.
+Each line has its data points in the form `[x, y]` along with a name and a colour.
+At minimum, your chart should display a simple line-graph connecting these points.
+Any enhancements beyond this (interactivity, styling, scaling, etc.) are optional but will be appreciated—even if not perfect.
 
 ### Additional Notes:
 
