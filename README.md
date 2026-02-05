@@ -4,7 +4,7 @@ Before you begin, we’d like to share a few notes to help you approach it with 
 
 This challenge is designed to evaluate your practical skills—not to trick you. There are several key requirements that we ask you to follow closely, and those will form the core of our assessment. In areas where details are not specified, we encourage you to make your own decisions. If we leave something open (for example, visual layout), it’s because we want to understand your creativity, independence, and problem-solving approach.
 
-You are absolutely welcome to go beyond the minimum requirements. In fact, we encourage it. That said, keep in mind that any additional features will still be evaluated, even if they’re not perfectly implemented—not as a “gotcha,” but to help us understand both your baseline and your strengths. If there’s a feature you’re confident in and it’s not explicitly mentioned, feel free to include it. It helps us get to know your capabilities more fully.
+You are absolutely welcome to go beyond the minimum requirements. In fact, we encourage it. That said, keep in mind that any additional features will still be evaluated, even if they’re not perfectly implemented—not as a “gotcha,” but to help us understand both your baseline and your strengths. If there’s a feature you’re confident in and it’s not explicitly mentioned, feel free to include it. It helps us get to know your abilities more fully. 
 
 With that in mind, let’s move on to the challenge itself.
 
@@ -47,6 +47,8 @@ Any enhancements beyond this (interactivity, styling, scaling, etc.) are optiona
 - For the buttons page, we’re particularly interested in how accurately you can implement the provided designs.
 
 - While we supply an API with fixed data, we will also test your chart using a different endpoint with the same structure but different values. Please build your solution with that in mind.
+
+- You may optionally keep a simple text document where you record your steps and anything noteworthy that happens while working on this challenge. In particular, note any issues you encounter and how you resolve them, as this will help us better understand your problem-solving process. 
 
 ## Resources:
 - API `https://brainx.sk/api/chart-data` (supports **GET** method)
