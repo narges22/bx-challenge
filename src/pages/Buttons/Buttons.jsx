@@ -1,14 +1,10 @@
-import Button from '../../components/Button'
 import ButtonDemo from '../../components/ButtonDemo'
-import { ExitIcon } from '../../components/Icons'
-import buttonStyles from '../../components/Button/Button.module.scss'
 import styles from './Buttons.module.scss'
 
 export default function Buttons() {
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Button Component Library</h1>
-      <h2 className={styles.subtitle}>Primary Button Variations</h2>
 
       <section className={styles.section}>
         <h3 className={styles.sectionTitle}>Regular Button - Primary</h3>

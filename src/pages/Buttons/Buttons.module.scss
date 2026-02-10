@@ -1,39 +1,38 @@
 @import '../../styles/variables.scss';
 
 .container {
-  padding: 40px;
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #1a1f2e;
+  padding: $spacingXl;
   min-height: 100vh;
-  color: #f5f5f5;
 }
 
 .title {
-  font-size: 32px;
+  font-size: $fontSizeXXXLarge;
   font-weight: 600;
-  margin-bottom: 8px;
-  color: #f5f5f5;
+  margin-bottom: $spacingXl;
+  color: var(--color-text-primary);
 }
 
 .subtitle {
-  font-size: 24px;
+  font-size: $fontSizeXLarge;
   font-weight: 500;
-  margin-bottom: 40px;
-  color: #c4cfd4;
+  margin-bottom: $spacingXl;
+  color: var(--color-text-secondary);
 }
 
 .section {
-  margin-bottom: 48px;
+  background-color: var(--color-background-secondary);
+  border-radius: $borderRadiusLg;
+  padding: $spacingXl;
+  margin-bottom: $spacingLg;
 }
 
 .sectionTitle {
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 24px;
-  color: #f5f5f5;
-  border-bottom: 1px solid #344146;
-  padding-bottom: 12px;
+  font-size: $fontSizeXLarge;
+  font-weight: 600;
+  margin-bottom: $spacingSm;
+  color: var(--color-text-primary);
 }
 
 .buttonGroup {
@@ -61,7 +60,7 @@
 .demoLabel {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #c4cfd4;
+  color: var(--color-text-secondary);
   min-width: 80px;
   margin: 0;
 }
@@ -94,7 +93,7 @@
 .demoLabel {
   font-size: 0.875rem;
   font-weight: 500;
-  color: #576c75;
+  color: var(--color-text-secondary);
   min-width: 80px;
   margin: 0;
 }
