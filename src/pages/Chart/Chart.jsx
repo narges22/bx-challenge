@@ -1,5 +1,6 @@
 // CanvasLineChart.js
 import { useEffect, useMemo, useRef } from 'react'
+import { useSelector } from 'react-redux'
 import {
   calculateBounds,
   setupCanvas,
@@ -7,23 +8,29 @@ import {
   drawGrid,
   drawAxisLabels,
   createPointMapper,
-  drawLine,
+  drawLine
 } from './helper'
 import { useChartData } from '../../hooks/useChartData'
 
-const chartOptions = {
-  padding: { left: 56, right: 24, top: 18, bottom: 44 },
-  gridCount: 10,
-  themeColors: {
+const getThemeColors = (theme) => {
+  if (theme === 'dark') {
+    return {
+      bg: '#0b0f19',
+      fg: '#f5f5f5',
+      grid: 'rgba(245, 245, 245, 0.10)'
+    }
+  }
+  return {
     bg: '#ffffff',
     fg: '#111827',
-    grid: 'rgba(17,24,39,0.10)',
-  },
+    grid: 'rgba(17,24,39,0.10)'
+  }
 }
 
 export default function CanvasLineChart() {
   const canvasRef = useRef(null)
   const wrapperRef = useRef(null)
+  const theme = useSelector((state) => state.theme.value)
 
   const { data, loading, error } = useChartData()
 
@@ -31,6 +38,15 @@ export default function CanvasLineChart() {
     if (!data.length) return { minX: 0, maxX: 1, minY: 0, maxY: 1 }
     return calculateBounds(data)
   }, [data])
+
+  const chartOptions = useMemo(
+    () => ({
+      padding: { left: 56, right: 24, top: 18, bottom: 44 },
+      gridCount: 10,
+      themeColors: getThemeColors(theme)
+    }),
+    [theme]
+  )
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -80,7 +96,7 @@ export default function CanvasLineChart() {
 
     draw()
     return () => ro.disconnect()
-  }, [data, bounds, loading, error])
+  }, [data, bounds, loading, error, chartOptions])
 
   return (
     <>
@@ -91,7 +107,7 @@ export default function CanvasLineChart() {
           width: '100%',
           height: '420px',
           borderRadius: 12,
-          overflow: 'hidden',
+          overflow: 'hidden'
         }}>
         <canvas ref={canvasRef} />
       </div>
