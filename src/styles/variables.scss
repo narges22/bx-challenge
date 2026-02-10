@@ -1,0 +1,70 @@
+// Design System Variables
+// Base font size: 16px (browser default)
+// All rem values are relative to this root font size
+
+// Font Sizes (using rem for accessibility and scalability)
+$fontSizeSmall: 0.75rem; // 12px
+$fontSizeBase: 0.875rem; // 14px
+$fontSizeLarge: 1rem; // 16px
+$fontSizeXLarge: 1.25rem; // 20px
+$fontSizeXXLarge: 1.5rem; // 24px
+$fontSizeXXXLarge: 2rem; // 32px
+
+// Line Heights
+$lineHeightTight: 1.2;
+$lineHeightNormal: 1.5;
+$lineHeightRelaxed: 1.75;
+
+// Colors
+
+// Primary Colors
+$colorPrimary: #576c75; // Main/Default state
+$colorPrimaryHover: #68828d; // Hover state
+$colorPrimaryDisabled: #344146; // Disabled state
+$colorPrimaryActive: #68828d; // Active/Pressed state
+
+// Secondary Colors
+$colorSecondary: #344146; // Main/Default state
+$colorSecondaryHover: #46565e; // Hover state
+$colorSecondaryActive: #566c75; // Active/Pressed state
+$colorSecondaryFocus: #344146; // Focus state
+$colorSecondaryDisabled: #344146; // Disabled state
+$colorSecondaryBorder: #526870; // Border color
+
+// Text Colors
+$colorText: #f5f5f5; // Default text
+$colorTextDisabled: #576c75; // Disabled text
+$colorTextActive: #c4cfd4; // Active text
+
+// Border Colors
+$colorBorder: #576c75;
+$colorBorderDark: #344146;
+$colorBorderActive: #ffe500; // Yellow border for active state
+
+// Background Colors
+$colorBackground: #f5f5f5; // Light page background
+$colorBackgroundLight: #ffffff;
+$colorBackgroundDark: #0b0f19; // Dark background (for specific use cases)
+
+// Legacy text colors (for other uses)
+$colorTextSecondary: #c4cfd4;
+$colorTextMuted: #576c75;
+
+// Spacing
+$spacingXs: 0.25rem; // 4px
+$spacingSm: 0.5rem; // 8px
+$spacingMd: 1rem; // 16px
+$spacingLg: 1.5rem; // 24px
+$spacingXl: 2rem; // 32px
+$spacingXxl: 2.5rem; // 40px
+$spacingXxxl: 3rem; // 48px
+
+// Border Radius
+$borderRadiusSm: 0.25rem; // 4px
+$borderRadiusMd: 0.375rem; // 6px
+$borderRadiusLg: 0.75rem; // 12px
+
+// Transitions
+$transitionFast: 0.15s ease-in-out;
+$transitionBase: 0.2s ease-in-out;
+$transitionSlow: 0.3s ease-in-out;
