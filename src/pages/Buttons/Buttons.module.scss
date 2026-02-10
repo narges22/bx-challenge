@@ -1,0 +1,92 @@
+@import '../../styles/variables.scss';
+
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: $colorBackground;
+  min-height: 100vh;
+  color: #111827;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #576c75;
+}
+
+.section {
+  margin-bottom: 48px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 24px;
+  color: #111827;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 12px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.buttonItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-width: 150px;
+}
+
+.label {
+  font-size: 12px;
+  color: #576c75;
+  text-align: center;
+  font-weight: 400;
+}
+
+.active {
+  background-color: #68828d !important;
+  color: #c4cfd4 !important;
+  border-color: #ffe500 !important;
+}
+
+.hoverDemo {
+  :global(button) {
+    background-color: $colorPrimaryHover !important;
+    border-color: $colorPrimaryHover !important;
+  }
+}
+
+.demoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.demoRow {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.demoLabel {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #576c75;
+  min-width: 80px;
+  margin: 0;
+}

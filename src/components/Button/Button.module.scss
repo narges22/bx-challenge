@@ -1,0 +1,144 @@
+@import '../../styles/variables.scss';
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacingSm;
+  padding: $spacingXs;
+  font-size: $fontSizeBase;
+  font-weight: 400;
+  line-height: $lineHeightNormal;
+  border-radius: $borderRadiusSm;
+  border: 1px solid $colorPrimary;
+  cursor: pointer;
+  transition: all $transitionBase;
+  font-family: inherit;
+  background-color: $colorPrimary; // Main: #576c75
+  color: $colorText; // Default: #f5f5f5
+
+  &:hover:not(:disabled) {
+    background-color: $colorPrimaryHover; // Hover: #68828d
+    border-color: $colorPrimaryHover;
+  }
+
+  &:disabled {
+    background-color: $colorPrimaryDisabled; // Disabled: #344146
+    color: $colorTextDisabled; // Disabled: #576c75
+    border-color: $colorPrimaryDisabled;
+    cursor: not-allowed;
+
+    .btnIcon {
+      color: $colorText; // Icons keep original color: #f5f5f5
+    }
+  }
+
+  &:active:not(:disabled) {
+    background-color: $colorPrimaryActive; // Active: #68828d
+  }
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    border-color: $colorBorderActive; // Focus: #ffe500
+  }
+}
+
+.btnContent {
+  display: inline-flex;
+  align-items: center;
+}
+
+.btnIcon {
+  display: inline-flex;
+  align-items: center;
+  font-size: $fontSizeLarge;
+  svg {
+    margin: 0.25rem; // 4px
+  }
+}
+
+.btnLarge .btnIcon svg {
+  margin: 0.25rem 0.5rem;
+}
+
+.btnIconLeft {
+  order: -1;
+}
+
+.btnIconRight {
+  order: 1;
+}
+
+.btnSecondary {
+  background-color: $colorSecondary; // Secondary: #344146
+  border-color: $colorSecondaryBorder; // Border: #526870
+  color: $colorText; // Default: #f5f5f5
+
+  &:hover:not(:disabled) {
+    background-color: $colorSecondaryHover; // Hover: #46565e
+    border-color: $colorSecondaryBorder;
+  }
+
+  &:disabled {
+    background-color: $colorSecondaryDisabled; // Disabled: #344146
+    color: $colorTextDisabled; // Disabled: #576c75
+    border-color: $colorSecondaryDisabled;
+    cursor: not-allowed;
+
+    .btnIcon {
+      color: $colorText; // Icons keep original color: #f5f5f5
+    }
+  }
+
+  &:active:not(:disabled) {
+    background-color: $colorSecondaryActive; // Active: #566c75
+  }
+  &:focus {
+    outline: none;
+  }
+  &:focus-visible {
+    border-color: $colorBorderActive; // Focus: #344146
+  }
+}
+
+.btnText {
+  background-color: transparent;
+  border-color: transparent;
+  color: $colorPrimary;
+
+  &:hover:not(:disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: $colorPrimaryHover;
+  }
+
+  &:disabled {
+    background-color: transparent;
+    border-color: transparent;
+    color: $colorTextDisabled;
+
+    .btnIcon {
+      color: $colorPrimary; // Icons keep original color for text buttons
+    }
+  }
+
+  &:active:not(:disabled) {
+    background-color: transparent;
+    border-color: transparent;
+    color: $colorPrimaryActive;
+  }
+
+  &:focus-visible {
+    border-color: $colorBorderActive; // Focus: #ffe500
+  }
+}
+
+.btnIconOnly {
+  // padding: $spacingSm;
+}
+
+.btnLarge {
+  padding: $spacingSm $spacingXs;
+}

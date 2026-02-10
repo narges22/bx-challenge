@@ -1,0 +1,20 @@
+@import '../../styles/variables.scss';
+
+.row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.variationActive {
+  :global(button) {
+    background-color: $colorPrimaryActive !important; // Active: #68828d
+  }
+}
+
+.variationFocus {
+  :global(button) {
+    border-color: $colorBorderActive !important; // Focus: #ffe500
+  }
+}
