@@ -6,7 +6,6 @@ export default function ButtonDemo({
   type = 'primary',
   variation = 'default',
   buttonText = 'Primary',
-
   className,
   ...rest
 }) {
@@ -19,18 +18,35 @@ export default function ButtonDemo({
   const wrapperClass = className
     ? `${styles.row} ${variationClass} ${className}`.trim()
     : `${styles.row} ${variationClass}`.trim()
+  const isSelected = variation === 'selected'
   return (
     <div className={wrapperClass}>
-      <Button type={type} disabled={variation === 'disabled'} {...rest}>
+      <Button type={type} disabled={variation === 'disabled'} selected={isSelected} {...rest}>
         {buttonText}
       </Button>
-      <Button type={type} iconRight={<span>→</span>} disabled={variation === 'disabled'} {...rest}>
+      <Button
+        type={type}
+        iconRight={<span>→</span>}
+        disabled={variation === 'disabled'}
+        selected={isSelected}
+        {...rest}>
         {buttonText}
       </Button>
-      <Button type={type} iconLeft={<span>←</span>} disabled={variation === 'disabled'} {...rest}>
+      <Button
+        type={type}
+        iconLeft={<span>←</span>}
+        disabled={variation === 'disabled'}
+        selected={isSelected}
+        {...rest}>
         {buttonText}
       </Button>
-      <Button type={type} iconLeft={<ExitIcon />} disabled={variation === 'disabled'} {...rest} />
+      <Button
+        type={type}
+        iconLeft={<ExitIcon />}
+        disabled={variation === 'disabled'}
+        selected={isSelected}
+        {...rest}
+      />
     </div>
   )
 }

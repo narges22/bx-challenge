@@ -91,6 +91,9 @@
       color: $colorText; // Icons keep original color: #f5f5f5
     }
   }
+  &.btnSelected {
+    border-color: #ffffff; // Selected: white border
+  }
 
   &:active:not(:disabled) {
     background-color: $colorSecondaryActive; // Active: #566c75
@@ -104,39 +107,36 @@
 }
 
 .btnText {
+  padding: 0;
   background-color: transparent;
   border-color: transparent;
-  color: $colorPrimary;
+  color: $colorText; // Default text: #f5f5f5
 
   &:hover:not(:disabled) {
     background-color: transparent;
     border-color: transparent;
-    color: $colorPrimaryHover;
+    color: $colorText; // Hover: #f5f5f5
   }
 
   &:disabled {
     background-color: transparent;
     border-color: transparent;
-    color: $colorTextDisabled;
+    color: $colorTextDisabled; // Disabled: #576c75
 
     .btnIcon {
-      color: $colorPrimary; // Icons keep original color for text buttons
+      color: $colorText; // Icons keep original color for text buttons
     }
   }
 
   &:active:not(:disabled) {
     background-color: transparent;
     border-color: transparent;
-    color: $colorPrimaryActive;
+    color: $colorText; // Active: #f5f5f5
   }
 
   &:focus-visible {
     border-color: $colorBorderActive; // Focus: #ffe500
   }
-}
-
-.btnIconOnly {
-  // padding: $spacingSm;
 }
 
 .btnLarge {
