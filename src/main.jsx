@@ -1,7 +1,5 @@
+import AppRoutes from './routes/AppRoutes'
+
 export const Main = () => {
-  return (
-    <div>
-      <div>Welcome</div>
-    </div>
-  )
+  return <AppRoutes />
 }
