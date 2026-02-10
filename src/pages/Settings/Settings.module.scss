@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacingXl;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: $fontSizeXXXLarge;
+  font-weight: 600;
+  margin-bottom: $spacingXl;
+  color: var(--color-text-primary);
+}
+
+.section {
+  background-color: var(--color-background-secondary);
+  border-radius: $borderRadiusLg;
+  padding: $spacingXl;
+  margin-bottom: $spacingLg;
+}
+
+.sectionTitle {
+  font-size: $fontSizeXLarge;
+  font-weight: 600;
+  margin-bottom: $spacingSm;
+  color: var(--color-text-primary);
+}
+
+.description {
+  font-size: $fontSizeBase;
+  color: var(--color-text-secondary);
+  margin-bottom: $spacingLg;
+}
+
+.themeSelector {
+  display: flex;
+  gap: $spacingMd;
+  flex-wrap: wrap;
+}
