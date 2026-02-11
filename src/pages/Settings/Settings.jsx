@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTheme } from '../../store/themeSlice'
 import Button from '../../components/Button'
