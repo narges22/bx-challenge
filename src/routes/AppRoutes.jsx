@@ -6,6 +6,7 @@ import Settings from '../pages/Settings'
 export default function AppRoutes() {
   return (
     <Routes>
+      <Route path="/" element={<Chart />} />
       <Route path="/chart" element={<Chart />} />
       <Route path="/buttons" element={<Buttons />} />
       <Route path="/settings" element={<Settings />} />
