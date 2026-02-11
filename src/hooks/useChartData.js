@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { transformData } from '../pages/Chart/helper'
+import { transformData } from '../components/Chart/helper'
 
 export function useChartData() {
   const [data, setData] = useState([])

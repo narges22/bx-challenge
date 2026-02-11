@@ -1,8 +1,6 @@
-// Design System Variables
-// Base font size: 16px (browser default)
-// All rem values are relative to this root font size
+// Base font size: 16px
 
-// Font Sizes (using rem for accessibility and scalability)
+// Font Sizes
 $fontSizeSmall: 0.75rem; // 12px
 $fontSizeBase: 0.875rem; // 14px
 $fontSizeLarge: 1rem; // 16px
@@ -18,33 +16,33 @@ $lineHeightRelaxed: 1.75;
 // Colors
 
 // Primary Colors
-$colorPrimary: #576c75; // Main/Default state
-$colorPrimaryHover: #68828d; // Hover state
-$colorPrimaryDisabled: #344146; // Disabled state
-$colorPrimaryActive: #68828d; // Active/Pressed state
+$colorPrimary: #576c75;
+$colorPrimaryHover: #68828d;
+$colorPrimaryDisabled: #344146;
+$colorPrimaryActive: #68828d;
 
 // Secondary Colors
-$colorSecondary: #344146; // Main/Default state
-$colorSecondaryHover: #46565e; // Hover state
-$colorSecondaryActive: #566c75; // Active/Pressed state
-$colorSecondaryFocus: #344146; // Focus state
-$colorSecondaryDisabled: #344146; // Disabled state
-$colorSecondaryBorder: #526870; // Border color
+$colorSecondary: #344146;
+$colorSecondaryHover: #46565e;
+$colorSecondaryActive: #566c75;
+$colorSecondaryFocus: #344146;
+$colorSecondaryDisabled: #344146;
+$colorSecondaryBorder: #526870;
 
 // Text Colors
-$colorText: #f5f5f5; // Default text
-$colorTextDisabled: #576c75; // Disabled text
-$colorTextActive: #c4cfd4; // Active text
+$colorText: #f5f5f5;
+$colorTextDisabled: #576c75;
+$colorTextActive: #c4cfd4;
 
 // Border Colors
 $colorBorder: #576c75;
 $colorBorderDark: #344146;
-$colorBorderActive: #ffe500; // Yellow border for active state
+$colorBorderActive: #ffe500;
 
 // Background Colors
-$colorBackground: #f5f5f5; // Light page background
+$colorBackground: #f5f5f5;
 $colorBackgroundLight: #ffffff;
-$colorBackgroundDark: #0b0f19; // Dark background (for specific use cases)
+$colorBackgroundDark: #0b0f19;
 
 // Legacy text colors (for other uses)
 $colorTextSecondary: #c4cfd4;

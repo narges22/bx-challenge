@@ -6,18 +6,17 @@ function getButtonTypeClass(type) {
 }
 
 /**
- * Reusable Button component.
- * Supports text, left/right icons, icon-only mode, sizes, and a selected state.
+ *  Button component.
  *
  * @param {Object} props - Component props.
- * @param {React.ReactNode} [props.children] - Button label content.
- * @param {React.ReactNode} [props.iconLeft] - Optional icon displayed on the left.
- * @param {React.ReactNode} [props.iconRight] - Optional icon displayed on the right.
- * @param {'primary' | 'secondary' | 'danger' | string} [props.type='primary'] - Visual style variant.
- * @param {'large' | undefined} [props.size] - Optional size variant.
- * @param {boolean} [props.selected] - Whether the button is in a selected/toggled state.
- * @param {string} [props.className] - Optional additional class name(s).
- * @param {...any} rest - Additional props passed to the native <button> element.
+ * @param {React.ReactNode} [props.children]
+ * @param {React.ReactNode} [props.iconLeft]
+ * @param {React.ReactNode} [props.iconRight]
+ * @param {'primary' | 'secondary' | 'danger' | string} [props.type='primary']
+ * @param {'large' | undefined} [props.size]
+ * @param {boolean} [props.selected]
+ * @param {string} [props.className]
+ * @param {...any} rest
  *
  * @returns {JSX.Element} A styled button element.
  */
