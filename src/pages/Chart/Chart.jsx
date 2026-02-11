@@ -8,7 +8,8 @@ import {
   drawGrid,
   drawAxisLabels,
   createPointMapper,
-  drawLine
+  drawLine,
+  drawLegend
 } from './helper'
 import { useChartData } from '../../hooks/useChartData'
 import layoutStyles from '../../components/Layout/Layout.module.scss'
@@ -42,7 +43,7 @@ export default function CanvasLineChart() {
 
   const chartOptions = useMemo(
     () => ({
-      padding: { left: 56, right: 24, top: 18, bottom: 44 },
+      padding: { left: 56, right: 24, top: 18, bottom: 64 },
       gridCount: 10,
       themeColors: getThemeColors(theme)
     }),
@@ -90,6 +91,9 @@ export default function CanvasLineChart() {
       for (const line of data) {
         drawLine(ctx, line, mapPoint)
       }
+
+      // Legend
+      drawLegend(ctx, data, chartLeft, chartTop, chartWidth, chartHeight, text)
     }
 
     const ro = new ResizeObserver(() => draw())

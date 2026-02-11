@@ -9,10 +9,6 @@ export default function Settings() {
   const theme = useSelector((state) => state.theme.value)
   const dispatch = useDispatch()
 
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme)
-  }, [theme])
-
   const handleThemeChange = (newTheme) => {
     dispatch(setTheme(newTheme))
     document.documentElement.setAttribute('data-theme', newTheme)

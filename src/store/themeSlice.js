@@ -5,7 +5,7 @@ const getInitialTheme = () => {
   if (savedTheme) {
     return savedTheme
   }
-  return 'light'
+  return 'dark'
 }
 
 const themeSlice = createSlice({

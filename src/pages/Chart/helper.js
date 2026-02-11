@@ -15,11 +15,8 @@ export const transformData = (lines) => {
     const validPoints = item.points.filter((p) => p && Number.isFinite(p.x) && Number.isFinite(p.y))
 
     // Sort points by x-coordinate
-    const sortedPoints = [...validPoints].sort((a, b) => {
-      const xA = a.x ?? 0
-      const xB = b.x ?? 0
-      return xA - xB
-    })
+    // Points are already validated, so x values are guaranteed to be numbers
+    const sortedPoints = [...validPoints].sort((a, b) => a.x - b.x)
 
     return {
       name: item.name || 'Unnamed',
@@ -198,5 +195,43 @@ export const drawLine = (ctx, line, mapPoint) => {
     ctx.beginPath()
     ctx.arc(p.cx, p.cy, 2.5, 0, Math.PI * 2)
     ctx.fill()
+  }
+}
+
+// Draws legend at the bottom of the chart
+export const drawLegend = (ctx, lines, chartLeft, chartTop, chartWidth, chartHeight, textColor) => {
+  if (!lines || lines.length === 0) return
+
+  const legendSquareSize = 12
+  const legendSpacing = 16
+  const legendSquarePadding = 6
+  const legendY = chartTop + chartHeight + legendSpacing
+
+  ctx.fillStyle = textColor
+  ctx.font = '12px system-ui, -apple-system, Segoe UI, Roboto, Arial'
+  ctx.textAlign = 'left'
+  ctx.textBaseline = 'middle'
+  // to center the legend (text not included)
+  let currentX =
+    chartLeft +
+    (chartWidth / 2 - (legendSquareSize + legendSquarePadding + legendSpacing) * lines.length)
+
+  for (const line of lines) {
+    const color = line.color || '#2563eb'
+    const name = line.name || 'Unnamed'
+
+    // Draw colored square
+    ctx.fillStyle = color
+    ctx.fillRect(currentX, legendY, legendSquareSize, legendSquareSize)
+
+    // Draw line name
+    ctx.fillStyle = textColor
+    const textX = currentX + legendSquareSize + legendSquarePadding
+    const textY = legendY + legendSquareSize / 2
+    ctx.fillText(name, textX, textY)
+
+    // Calculate next position
+    const textWidth = ctx.measureText(name).width
+    currentX += legendSquareSize + legendSquarePadding + textWidth + legendSpacing
   }
 }
