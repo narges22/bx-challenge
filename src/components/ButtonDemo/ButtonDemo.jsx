@@ -2,6 +2,25 @@ import Button from '../Button'
 import { ExitIcon } from '../Icons'
 import styles from './ButtonDemo.module.scss'
 
+/**
+ * ButtonDemo
+ *
+ * Renders a row of button variations for demonstration .
+ *
+ * @param {Object} props - Component props
+ * @param {'primary' | 'secondary' | 'danger' | string} [props.type='primary']
+ *  The visual style variant of the button.
+ *
+ * @param {'default' | 'active' | 'focus' | 'disabled' | 'selected'} [props.variation='default']
+ *  The visual state of the button for demonstration.
+ *
+ * @param {string} [props.buttonText='Primary']
+ *  The text displayed inside the button.
+ * @param {string} [props.className]
+ *  Optional additional class names.
+ * * @returns {JSX.Element} A styled button element.
+ */
+
 export default function ButtonDemo({
   type = 'primary',
   variation = 'default',
