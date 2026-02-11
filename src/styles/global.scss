@@ -7,25 +7,21 @@
 }
 
 html {
-  // Set base font size to 16px (browser default) so calculations of rem would be consistant
   font-size: 16px;
 }
-
-// Light theme (default)
-:root,
+// Light theme :root,
 [data-theme='light'] {
-  --color-background-primary: #{$colorBackground}; // #f5f5f5
-  --color-background-secondary: #{$colorBackgroundLight}; // #ffffff
+  --color-background-primary: #{$colorBackground};
+  --color-background-secondary: #{$colorBackgroundLight};
   --color-text-primary: #111827;
-  --color-text-secondary: #{$colorTextMuted}; // #576c75
+  --color-text-secondary: #{$colorTextMuted};
 }
-
 // Dark theme
 [data-theme='dark'] {
-  --color-background-primary: #{$colorBackgroundDark}; // #0b0f19
+  --color-background-primary: #{$colorBackgroundDark};
   --color-background-secondary: #1a1f2e;
-  --color-text-primary: #{$colorText}; // #f5f5f5
-  --color-text-secondary: #{$colorTextSecondary}; // #c4cfd4
+  --color-text-primary: #{$colorText};
+  --color-text-secondary: #{$colorTextSecondary};
 }
 
 body {

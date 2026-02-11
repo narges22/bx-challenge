@@ -28,12 +28,7 @@ export default function ButtonDemo({
   className,
   ...rest
 }) {
-  const variationClass =
-    variation === 'active'
-      ? styles.variationActive
-      : variation === 'focus'
-        ? styles.variationFocus
-        : ''
+  const variationClass = variation === 'focus' ? styles.variationFocus : ''
   const wrapperClass = className
     ? `${styles.row} ${variationClass} ${className}`.trim()
     : `${styles.row} ${variationClass}`.trim()
