@@ -45,6 +45,7 @@ export const calculateBounds = (lines) => {
     }
   }
   // what if it's a straight vertical or horizontal line?
+  // to avoid x/0 in createPointMapper function
   if (minX === maxX) {
     minX -= 1
     maxX += 1
@@ -79,8 +80,8 @@ export const setupCanvas = (canvas, wrapper) => {
 }
 
 // Handle Empty State
-export const drawEmptyState = (ctx, cssW, cssH, fg, loading, error, hasData) => {
-  ctx.fillStyle = fg
+export const drawEmptyState = (ctx, cssW, cssH, text, loading, error, hasData) => {
+  ctx.fillStyle = text
   ctx.font = '14px system-ui, -apple-system, Segoe UI, Roboto, Arial'
   ctx.textAlign = 'center'
 
@@ -102,10 +103,17 @@ export const drawEmptyState = (ctx, cssW, cssH, fg, loading, error, hasData) => 
   return false
 }
 
-/**
- * Draws grid lines on the canvas
- */
-export const drawGrid = (ctx, plotX, plotY, plotW, plotH, gridCount, gridColor) => {
+// Draws grid lines on the canvas
+
+export const drawGrid = (
+  ctx,
+  chartLeft,
+  chartTop,
+  chartWidth,
+  chartHeight,
+  gridCount,
+  gridColor
+) => {
   ctx.strokeStyle = gridColor
   ctx.lineWidth = 1
 
@@ -113,48 +121,50 @@ export const drawGrid = (ctx, plotX, plotY, plotW, plotH, gridCount, gridColor) 
     const t = i / gridCount
 
     // vertical
-    const x = plotX + t * plotW
+    const x = chartLeft + t * chartWidth
     ctx.beginPath()
-    ctx.moveTo(x, plotY)
-    ctx.lineTo(x, plotY + plotH)
+    ctx.moveTo(x, chartTop)
+    ctx.lineTo(x, chartTop + chartHeight)
     ctx.stroke()
 
     // horizontal
-    const y = plotY + t * plotH
+    const y = chartTop + t * chartHeight
     ctx.beginPath()
-    ctx.moveTo(plotX, y)
-    ctx.lineTo(plotX + plotW, y)
+    ctx.moveTo(chartLeft, y)
+    ctx.lineTo(chartLeft + chartWidth, y)
     ctx.stroke()
   }
 }
 
 // Draws axis labels
 
-export const drawAxisLabels = (ctx, plotX, plotY, plotW, plotH, bounds, fg) => {
-  ctx.fillStyle = fg
+export const drawAxisLabels = (ctx, chartLeft, chartTop, chartWidth, chartHeight, bounds, text) => {
+  ctx.fillStyle = text
   ctx.font = '12px system-ui, -apple-system, Segoe UI, Roboto, Arial'
 
   const { minX, maxX, minY, maxY } = bounds
 
   ctx.textAlign = 'left'
-  ctx.fillText(String(minY.toFixed(2)), 8, plotY + plotH)
-  ctx.fillText(String(maxY.toFixed(2)), 8, plotY + 12)
+  ctx.fillText(String(minY.toFixed(2)), 8, chartTop + chartHeight)
+  ctx.fillText(String(maxY.toFixed(2)), 8, chartTop + 12)
 
   ctx.textAlign = 'center'
-  ctx.fillText(String(minX.toFixed(2)), plotX, plotY + plotH + 28)
-  ctx.fillText(String(maxX.toFixed(2)), plotX + plotW, plotY + plotH + 28)
+  ctx.fillText(String(minX.toFixed(2)), chartLeft, chartTop + chartHeight + 28)
+  ctx.fillText(String(maxX.toFixed(2)), chartLeft + chartWidth, chartTop + chartHeight + 28)
 }
 
-// Creates a point mapper function that converts data coordinates to canvas coordinates
+// A mapper function that converts data coordinates from regular axis to canvas coordinates
 
-export const createPointMapper = (bounds, plotX, plotY, plotW, plotH) => {
+export const createPointMapper = (bounds, chartLeft, chartTop, chartWidth, chartHeight) => {
+  // configure the varibales once and reuse the map function for each ponit
   const { minX, maxX, minY, maxY } = bounds
   return (x, y) => {
-    const nx = (x - minX) / (maxX - minX)
-    const ny = (y - minY) / (maxY - minY)
+    const normalizedX = (x - minX) / (maxX - minX)
+    const normalizedY = (y - minY) / (maxY - minY)
     return {
-      cx: plotX + nx * plotW,
-      cy: plotY + (1 - ny) * plotH
+      cx: chartLeft + normalizedX * chartWidth,
+      // because y-axis in inverted in canvas
+      cy: chartTop + (1 - normalizedY) * chartHeight
     }
   }
 }

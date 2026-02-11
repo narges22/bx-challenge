@@ -16,13 +16,13 @@ const getThemeColors = (theme) => {
   if (theme === 'dark') {
     return {
       bg: '#0b0f19',
-      fg: '#f5f5f5',
+      text: '#f5f5f5',
       grid: 'rgba(245, 245, 245, 0.10)'
     }
   }
   return {
     bg: '#ffffff',
-    fg: '#111827',
+    text: '#111827',
     grid: 'rgba(17,24,39,0.10)'
   }
 }
@@ -58,7 +58,7 @@ export default function CanvasLineChart() {
     const { ctx, cssW, cssH } = canvasSetup
 
     const { padding, gridCount, themeColors: colors } = chartOptions
-    const { bg, fg, grid } = colors
+    const { bg, text, grid } = colors
 
     const draw = () => {
       ctx.clearRect(0, 0, cssW, cssH)
@@ -66,24 +66,24 @@ export default function CanvasLineChart() {
       ctx.fillRect(0, 0, cssW, cssH)
 
       // Empty-state inside canvas
-      if (drawEmptyState(ctx, cssW, cssH, fg, loading, error, data.length > 0)) {
+      if (drawEmptyState(ctx, cssW, cssH, text, loading, error, data.length > 0)) {
         return
       }
 
-      const plotX = padding.left
-      const plotY = padding.top
-      // calculate the plot width and height
-      const plotW = cssW - padding.left - padding.right
-      const plotH = cssH - padding.top - padding.bottom
+      const chartLeft = padding.left
+      const chartTop = padding.top
+      // calculate the chart width and height
+      const chartWidth = cssW - padding.left - padding.right
+      const chartHeight = cssH - padding.top - padding.bottom
 
       // Grid
-      drawGrid(ctx, plotX, plotY, plotW, plotH, gridCount, grid)
+      drawGrid(ctx, chartLeft, chartTop, chartWidth, chartHeight, gridCount, grid)
 
       // Axes labels
-      drawAxisLabels(ctx, plotX, plotY, plotW, plotH, bounds, fg)
+      drawAxisLabels(ctx, chartLeft, chartTop, chartWidth, chartHeight, bounds, text)
 
-      // Mapper
-      const mapPoint = createPointMapper(bounds, plotX, plotY, plotW, plotH)
+      // Mapper closure
+      const mapPoint = createPointMapper(bounds, chartLeft, chartTop, chartWidth, chartHeight)
 
       // Lines
       for (const line of data) {
