@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.container {
+  margin: 0 auto;
+  padding: $spacingXl;
+  min-height: 100vh;
+}
+
+.title {
+  font-size: $fontSizeXXXLarge;
+  font-weight: 600;
+  margin-bottom: $spacingXl;
+  color: var(--color-text-primary);
+}

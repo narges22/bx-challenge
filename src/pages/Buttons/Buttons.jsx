@@ -1,11 +1,11 @@
 import ButtonDemo from '../../components/ButtonDemo'
+import layoutStyles from '../../components/Layout/Layout.module.scss'
 import styles from './Buttons.module.scss'
 
 export default function Buttons() {
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Button Component Library</h1>
-
+    <>
+      <h1 className={layoutStyles.title}>Button Component Library</h1>
       <section className={styles.section}>
         <h3 className={styles.sectionTitle}>Regular Button - Primary</h3>
         <div className={styles.demoSection}>
@@ -106,6 +106,6 @@ export default function Buttons() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   )
 }

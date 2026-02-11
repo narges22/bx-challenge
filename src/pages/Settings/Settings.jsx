@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setTheme } from '../../store/themeSlice'
 import Button from '../../components/Button'
+import layoutStyles from '../../components/Layout/Layout.module.scss'
 import styles from './Settings.module.scss'
 
 export default function Settings() {
@@ -18,8 +19,8 @@ export default function Settings() {
   }
 
   return (
-    <div className={styles.container}>
-      <h1 className={styles.title}>Settings</h1>
+    <>
+      <h1 className={layoutStyles.title}>Settings</h1>
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>Theme</h2>
         <p className={styles.description}>Choose your preferred theme</p>
@@ -38,6 +39,6 @@ export default function Settings() {
           </Button>
         </div>
       </section>
-    </div>
+    </>
   )
 }

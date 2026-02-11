@@ -1,19 +1,5 @@
 @import '../../styles/variables.scss';
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: $spacingXl;
-  min-height: 100vh;
-}
-
-.title {
-  font-size: $fontSizeXXXLarge;
-  font-weight: 600;
-  margin-bottom: $spacingXl;
-  color: var(--color-text-primary);
-}
-
 .subtitle {
   font-size: $fontSizeXLarge;
   font-weight: 500;

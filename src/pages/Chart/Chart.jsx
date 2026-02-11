@@ -11,6 +11,7 @@ import {
   drawLine
 } from './helper'
 import { useChartData } from '../../hooks/useChartData'
+import layoutStyles from '../../components/Layout/Layout.module.scss'
 
 const getThemeColors = (theme) => {
   if (theme === 'dark') {
@@ -100,7 +101,7 @@ export default function CanvasLineChart() {
 
   return (
     <>
-      <h3>Charts</h3>
+      <h1 className={layoutStyles.title}>Chart</h1>
       <div
         ref={wrapperRef}
         style={{
